@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Sign Classifier</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <nav class="bg-blue-500 text-white py-4 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">Traffic Sign Classifier</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="text-white hover:text-gray-200">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mx-auto p-4">
+        <div class="flex justify-center">
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="{{ url_for('video_feed') }}" alt="Camera Feed" class="w-full">
+            </div>
+        </div>
+        <div id="info" class="text-center mt-4">
+            <p class="text-lg font-semibold" id="class-name">CLASS: Unknown</p>
+            <p class="text-lg font-semibold" id="probability">PROBABILITY: 0%</p>
+        </div>
+        <p class="text-center text-gray-600 mt-4">Press 'q' to stop the camera feed.</p>
+    </div>
+    <script>
+        // JavaScript to update class name and probability dynamically
+        function updateInfo(className, probability) {
+            // Check if the className is "Unknown" or if probability is 0
+            if (className === "Unknown" || probability === 0) {
+                document.getElementById('class-name').innerText = `CLASS: N/A`;
+                document.getElementById('probability').innerText = `PROBABILITY: N/A`;
+            } else {
+                document.getElementById('class-name').innerText = `CLASS: ${className}`;
+                document.getElementById('probability').innerText = `PROBABILITY: ${probability}%`;
+            }
+        }
+
+        // Fetch the latest class name and probability from the server
+        setInterval(() => {
+            fetch('/latest_info')  // This endpoint should return the latest info
+                .then(response => response.json())
+                .then(data => {
+                    updateInfo(data.className, data.probability);
+                });
+        }, 100); // Update every second
+    </script>
+</body>
+</html>
