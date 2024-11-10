@@ -7,27 +7,43 @@
     <title>Traffic Sign Classifier</title>
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 min-h-screen">
-    <nav class="bg-blue-500 text-white py-4 px-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold">Traffic Sign Classifier</h1>
-            <ul class="flex space-x-4">
-                <li><a href="#" class="text-white hover:text-gray-200">Home</a></li>
-            </ul>
+<body class="bg-blue-100 min-h-screen">
+    <nav style="background-color: #00897B; color: white; padding: 1rem;">
+        <div class="container mx-auto flex justify-center items-center">
+            <img src="https://raw.githubusercontent.com/waliulrayhan/Traffic-Sign-Web/main/traffic-lights.png
+            " alt="Traffic Lights Logo" class="w-10 h-10 mr-4">
+            <h1 class="text-2xl font-extrabold">Traffic Signs Classification</h1>
+            <span class="ml-2 text-sm">BETA</span>
         </div>
-    </nav>
+    </nav>    
     <div class="container mx-auto p-4">
+        <div id="info" class="text-center mt-4">
+            <p class="text-xl font-extrabold text-black" id="class-name">CLASS: Unknown</p>
+            <br>
+        </div>
         <div class="flex justify-center">
             <div class="bg-white shadow-md rounded-lg overflow-hidden">
                 <img src="{{ url_for('video_feed') }}" alt="Camera Feed" class="w-full">
             </div>
         </div>
         <div id="info" class="text-center mt-4">
-            <p class="text-lg font-semibold" id="class-name">CLASS: Unknown</p>
-            <p class="text-lg font-semibold" id="probability">PROBABILITY: 0%</p>
+            <p class="text-xl font-extrabold text-black" id="probability">PROBABILITY: 0%</p>
         </div>
-        <p class="text-center text-gray-600 mt-4">Press 'q' to stop the camera feed.</p>
+        <br>
+        <br>
+        <br>
+        <div class="flex items-center justify-center mt-4">
+            <img src="https://raw.githubusercontent.com/waliulrayhan/Traffic-Sign-Web/main/info.png" alt="Eye Icon" class="w-3 max-h-3 mr-2">
+            <p class="text-center text-gray-600">Keep the image inside the viewfinder rectangle to scan it.</p>
+        </div>
     </div>
     <script>
         // JavaScript to update class name and probability dynamically
@@ -35,10 +51,22 @@
             // Check if the className is "Unknown" or if probability is 0
             if (className === "Unknown" || probability === 0) {
                 document.getElementById('class-name').innerText = `CLASS: N/A`;
+                document.getElementById('class-name').style.color = 'red';
+                document.getElementById('class-name').style.fontWeight = 'bold';
+                document.getElementById('class-name').style.fontSize = '1.35rem'; // Set text size to extra large
                 document.getElementById('probability').innerText = `PROBABILITY: N/A`;
+                document.getElementById('probability').style.color = 'red';
+                document.getElementById('probability').style.fontWeight = 'bold';
+                document.getElementById('probability').style.fontSize = '1.35rem'; // Set text size to extra large
             } else {
                 document.getElementById('class-name').innerText = `CLASS: ${className}`;
-                document.getElementById('probability').innerText = `PROBABILITY: ${probability}%`;
+                document.getElementById('class-name').style.color = 'green';
+                document.getElementById('class-name').style.fontWeight = 'bold';
+                document.getElementById('class-name').style.fontSize = '1.35rem'; // Set text size to extra large
+                document.getElementById('probability').innerText = `PROBABILITY: ${probability.toFixed(2)}%`;
+                document.getElementById('probability').style.color = 'green';
+                document.getElementById('probability').style.fontWeight = 'bold';
+                document.getElementById('probability').style.fontSize = '1.35rem'; // Set text size to extra large
             }
         }
 
