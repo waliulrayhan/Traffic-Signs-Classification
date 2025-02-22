@@ -14,9 +14,9 @@ The CNN model is trained using Keras and TensorFlow and can classify traffic sig
 
 Traffic sign recognition is crucial for the development of self-driving cars and other intelligent road systems. This project employs a CNN model to classify images of traffic signs into 43 distinct classes. Using image processing and data augmentation techniques, the model achieves robust performance, making it suitable for real-world applications.
 
-![Overview](graphs%20and%20images/terminal_1.png)
+![image](https://github.com/user-attachments/assets/2a16241c-b2b6-4849-a832-07cb34cbac42)
 
-![Overview](graphs%20and%20images/overview.png)
+![image](https://github.com/user-attachments/assets/a93a1fac-cc18-41f0-a4f0-1cc8e550ce30)
 
 ---
 
@@ -29,7 +29,8 @@ The project uses the [German Traffic Sign Recognition Benchmark (GTSRB)](http://
 - **Validation Set**: 20% of the training data
 - **Test Set**: 20% of the total dataset
 
-![Class Distribution](graphs%20and%20images/distribution.png)
+![image](https://github.com/user-attachments/assets/c5e6c8ad-35bf-4393-a829-d55ae2743341)
+
 
 ---
 
