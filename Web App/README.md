@@ -74,6 +74,10 @@ The CNN model used in this project was developed using the following methodology
 
 The training script can be found in `TrafficSigns_main.py`, and the real-time prediction script is in `TrafficSign_Test.py`.
 
+### Web App Screenshots
+
+![Web App Screenshot 1](https://github.com/nishatrhythm/Traffic-Signs-Classification-Using-Convolutional-Neural-Networks/blob/main/live%20test%20images/Web_Screenshot_1.png)
+
 ## Contributing
 
 We welcome contributions from the community! If you wish to contribute:
