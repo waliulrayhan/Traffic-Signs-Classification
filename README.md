@@ -43,7 +43,7 @@ The CNN model has been built using the Keras framework. The architecture include
 - **Dropout Layers**: Prevent overfitting by dropping nodes during training.
 - **Dense Layers**: Perform final classification using a softmax activation function.
 
-![Overview](graphs%20and%20images/terminal_2.png)
+![image](https://github.com/user-attachments/assets/dd5a5249-3069-4f96-a83b-c6788bb5bdeb)
 
 ### Model Summary
 
@@ -69,8 +69,8 @@ Make sure you have the following packages installed:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/nishatrhythm/Traffic-Signs-Classification-Using-Convolution-Neural-Networks.git
-   cd Traffic-Signs-Classification-Using-Convolution-Neural-Networks
+   git clone https://github.com/waliulrayhan/Traffic-Signs-Classification.git
+   cd Traffic-Signs-Classification
    ```
 
 2. Install the required dependencies:
@@ -101,7 +101,7 @@ python TrafficSigns_main.py
 ```
 The model is trained using the Adam optimizer and categorical cross-entropy loss function. The training history, including accuracy and loss curves, is plotted for analysis.
 
-![Overview](graphs%20and%20images/terminal_3.png)
+![image](https://github.com/user-attachments/assets/aed864f7-2d4f-42c9-9cd8-4c8bd70de15c)
 
 ### Evaluation
 The model is evaluated on the test set to measure performance. The final model is saved as `model_trained.p` for later use.
@@ -112,11 +112,11 @@ The model is evaluated on the test set to measure performance. The final model i
 
 ### Accuracy Curves
 
-![Accuracy Curves](graphs%20and%20images/accuracy.png)
+![image](https://github.com/user-attachments/assets/cee45fd8-5ff3-43cf-a791-f05af97c834f)
 
 ### Loss Curves
 
-![Loss Curves](graphs%20and%20images/loss.png)
+![image](https://github.com/user-attachments/assets/28c550f4-f443-4579-abc6-918fd40d2568)
 
 ---
 
